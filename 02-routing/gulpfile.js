@@ -11,6 +11,8 @@ gulp.task('browser-sync', function(){
 	browserSync(config);
 });
 
-gulp.task("serve", ["browser-sync"], function(){
-	gulp.watch(["./dev/**/*.html", './dev/*.js', './dev/products/**/*'], ["browser-sync", browserSync.reload]);
-})
+gulp.task("serve", function(){
+	gulp.watch(["./dev/**/*.html", './dev/**/*.js'], ["browser-sync", browserSync.reload]);
+});
+
+gulp.task("default", ['browser-sync', 'serve']);
