@@ -6,13 +6,18 @@ gulp.task('browser-sync', function(){
 		server: {
 			baseDir: './dev/'
 		},
-		browser: "google chrome"
+		browser: ["google chrome", "firefox", "safari"]
 	}
 	browserSync(config);
 });
 
 gulp.task("serve", function(){
-	gulp.watch(["./dev/**/*.html", './dev/**/*.js'], ["browser-sync", browserSync.reload]);
+	gulp.watch([
+			"./dev/**/*.html", 
+			'./dev/**/*.js'
+		], 
+		["browser-sync", browserSync.reload]);
 });
 
 gulp.task("default", ['browser-sync', 'serve']);
+
