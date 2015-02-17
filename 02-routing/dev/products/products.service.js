@@ -57,6 +57,7 @@
             return product;
         }  
 
+
 		return {
 			getProducts: getProducts,
 			getProduct: getProduct,
