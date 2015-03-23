@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	.container(ng-app="AppUsers")
+		h1 Users
+		p= message
+		.col-xs-3(ng-controller="usersController")
+			a(href="/") Logout
+			table.table.table-bordered.table-striped
+				tr
+					th Username
+					th Action
+				tr(ng-repeat="user in users")
+					td {{ user.username }}
+					td
